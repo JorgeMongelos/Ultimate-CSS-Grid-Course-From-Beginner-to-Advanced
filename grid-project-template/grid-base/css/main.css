@@ -1,11 +1,97 @@
-/* Put your code here */
+/* Source-Order: Independence-order */
 .grid{
-    display: grid;
-    grid-template: 100px 100px/100px auto 100px;
-    /* Longhand 
-    grid-row-gap: 10px;
-    grid-column-gap: 10px; */
-    grid-gap: 10px 20px;
-    /* shorthand^ */
+    display: grid; 
+    grid-template: 100px 200px / 200px auto  150px ; 
+    grid-gap: 10px 10px; 
 }
 
+/* Flexbox order property applicable */
+.grid div:nth-child(6){
+    order: -1;
+}
+
+.grid div:nth-child(3){
+    order: 1;
+}
+
+/* Defining Gutters: grid-row-gap & grid-column-gap */
+.grid{
+    display: grid; 
+    grid-template: 100px 200px / 200px auto  150px ; 
+    /* Provides gutters in the horizontal line 
+    grid-row-gap: 10px; */
+    /* Provides gutters in the vertical line 
+    grid-column-gap: 10px; */
+    /* Shorthand */
+    grid-gap: 10px 10px; 
+} 
+
+/* Naming Grid Lines */
+.grid{
+    display: grid; 
+    grid-template: 
+    /* Provides an alias for the first horizontal gridline*/ [row1-start]100px 
+    /* Provides an alias for the 2nd horizontal gridline*/[row1-end row2-start]200px 
+    [row2-end] / 
+    /* Provides an alias for the first vertical gridline */ [col1-start]200px 
+    /* Provides an alias for the 2nd vertical gridline */[col1-end col2-start]auto 
+    /* Provides an alias for the 3rd vertical gridline */[col-2-end]150px; 
+}
+
+/* Applicability */
+.grid div:nth-child(5){
+    grid-row: row1-start / row2-end;
+    grid-column: col1-start / col2-end;
+ }
+
+/* Spaning a Fixed Number of Rows and Columns: span */
+.grid div:nth-child(1){
+    grid-row: auto /* wherever the row starts */ / span 2; /* spans the height of the column by 2 rows */
+}
+
+/* Arranging Grid Items: grid-row-start/end & grid-column-start/end. */
+.grid div:nth-child(2){
+    /* re-arranges items in the horizontal grid line */
+    grid-row-start: 2; 
+    grid-row-end: 3;
+    /* re-arranges items in the vertical grid line */
+    grid-column-start: 1; 
+    grid-column-end: 2;
+}
+
+.grid div:nth-child(5){
+   /* Shorthand of the above concept */
+   grid-row: 1 / 2;
+   grid-column: 1 / 2;
+}
+
+
+/* Defining the Grid: grid-template-row & grid-template-columns*/
+.grid{
+    display: grid; 
+    /* Longhand.
+    grid-template-rows: 100px <1st row height> 200px <2nd row height>;
+    grid-template-columns: 200px <1st column width> auto <takes remaing width> 150px <3rd column width>; 
+    */
+    
+    /* Shorthand */ grid-template: 100px /* 1st row height */ 200px /* 2nd row height */ / 200px /* 1st column width */ auto /* takes remaing width */ 150px /* 3rd column width */; 
+}
+
+/* Enabling CSS Grid with display:grid;*/
+.grid{
+    display: grid; 
+}
+/* Shortcuts.
+
+    div.grid>div*6(Item $)
+
+*/
+/*  Terminology.
+
+    Grid line
+    Grid track
+    Grid cell
+    Grid area
+    Grid container
+    Grid Item
+*/

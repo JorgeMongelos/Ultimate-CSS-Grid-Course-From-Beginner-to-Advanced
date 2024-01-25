@@ -917,10 +917,29 @@
   </body>
 </html>
 ``` 
-
-## Placeholder
+# Section #7: Advanced CSS Grids.
+## Overlaping Grid Items.
 ```CSS
+.grid{
+    display: grid;
+    grid: 200px 200px / 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
 
+.three{
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    background-color: rgba(0,0,80, 0.7);
+    z-index: 1;
+}
+
+
+.four{
+    grid-row: 1;
+    grid-column: 2 / span 2;
+    background-color: rgba(80,0,0, 0.7);
+    z-index: 2;
+}
 ```
 ```HTML
 <!DOCTYPE html>
@@ -945,6 +964,200 @@
         <div>Item 6</div>
       </div>
     </div>
+  </body>
+</html>
+```
+## Nested Grid.
+```CSS
+.grid{
+    display: grid;
+    grid: 350px 350px / 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.grid img {
+    width: 100%;
+    height: 100%;
+}
+
+.subgrid{
+    display: grid;
+    grid: 50% 50% / 50% 50%;
+    grid-gap: 5px;
+}
+```
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Ultimate CSS Grid Course, (c) Peter Sommerhoff</title>
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="css/main.css">
+      <!-- Remove this line for offline development: -->
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+  </head>
+  <body>
+    <h2>Ultimate CSS Grid Course</h2>
+    <p>This is the template you can use to follow along the course.</p>
+    <div class="grid">
+      <div class="item"><img src="./img/squirrel.jpg" alt=""></div>
+      <div class="item"><img src="./img/squirrel.jpg" alt=""></div>
+      <div class="item"><img src="./img/squirrel.jpg" alt=""></div>
+      <div class="item"><img src="./img/squirrel.jpg" alt=""></div>
+      <div class="item subgrid">
+        <img src="./img/squirrel.jpg" alt="">
+        <img src="./img/squirrel.jpg" alt="">
+        <img src="./img/squirrel.jpg" alt="">
+        <img src="./img/squirrel.jpg" alt="">
+      </div>
+      <div class="item"><img src="./img/squirrel.jpg" alt=""></div>
+    </div>  
+  </body>
+</html>
+```
+## CSS Grid and Absolute Positioning I.
+```CSS
+.grid{
+    display: grid;
+    grid: 100px 100px / 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    position: relative;
+}
+
+.highlighter{
+    position: absolute;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    top: -5px;
+    left: -5px;
+    grid-row: 2;
+    grid-column: 2 / span 2;
+    background-color: rgba(200, 250, 50, 0.3);
+}
+```
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Ultimate CSS Grid Course, (c) Peter Sommerhoff</title>
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="css/main.css">
+      <!-- Remove this line for offline development: -->
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+  </head>
+  <body>
+    <h2>Ultimate CSS Grid Course</h2>
+    <p>This is the template you can use to follow along the course.</p>
+    <div class="grid">
+      <div class="highlighter"></div>
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+      <div class="item">Item 7</div>
+      <div class="item">Item 8</div>
+    </div> 
+  </body>
+</html>
+
+``` 
+## CSS Grid and Absolute Positioning II.
+```CSS
+.grid{
+    display: grid;
+    grid: 300px 300px / 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.item{
+    position: relative;
+}
+
+.abs{
+    position: absolute;
+}
+
+.tl{ top: 0; left: 0;}
+.tr{ top: 0; right: 0;}
+.bl{ bottom: 0; left: 0;}
+.br{ bottom: 0; right: 0;}
+```
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Ultimate CSS Grid Course, (c) Peter Sommerhoff</title>
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="css/main.css">
+      <!-- Remove this line for offline development: -->
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+  </head>
+  <body>
+    <h2>Ultimate CSS Grid Course</h2>
+    <p>This is the template you can use to follow along the course.</p>
+    <div class="grid">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2
+        <span class="abs tl">top-left</span>
+        <span class="abs tr">top-right</span>
+        <span class="abs bl">bottom-left</span>
+        <span class="abs br">bottom-right</span>
+      </div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+    </div> 
+  </body>
+</html>
+
+``` 
+## Layout Prototyping.
+```CSS
+.grid{
+    display: grid;
+    grid: 100px auto 150px / repeat(8, 1fr);
+    grid-template-areas: 
+    "h h h h  h h h h"
+    "s s c c  c c c c"
+    "f f f f  f f f f";
+    min-height: 100vh;
+}
+
+.header{
+    grid-area: h;
+}
+
+.content{
+    grid-area: c;
+}
+
+.sidebar{
+    grid-area: s;
+}
+
+.footer{
+    grid-area: f;
+}
+```
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Ultimate CSS Grid Course, (c) Peter Sommerhoff</title>
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="css/main.css">
+      <!-- Remove this line for offline development: -->
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+  </head>
+  <body class="grid">
+    <header class="header">Header</header>
+    <main class="content">
+      <h2>Ultimate CSS Grid Course</h2>
+      <p>This is the template you can use to follow along the course.</p>
+    </main>
+    <aside class="sidebar">Sidebar</aside>
+    <footer class="footer">Footer</footer>
   </body>
 </html>
 ``` 

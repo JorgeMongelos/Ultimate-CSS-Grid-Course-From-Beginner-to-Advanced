@@ -1,17 +1,26 @@
 .grid{
     display: grid;
-    grid: auto-flow 150px / auto-flow 1fr; /* 2 x 2 explicit */
-     /* 'auto-flow value = Equivalent to:
-            grid-auto-flow: column;
-            grid-template-columns: none; (default)
-            grid-auto-columns: 150px;
-            grid-template-rows: none;
-            grid-auto-rows: 150px;
-    */
-    grid-gap: 10px; /* <-- below grid property. */
-    grid-auto-flow:  row dense;
+    grid: 100px auto 150px / repeat(8, 1fr);
+    grid-template-areas: 
+    "h h h h  h h h h"
+    "c c c c  c c s s"
+    "f f f f  f f f f";
+    grid-gap: 10px;
+    min-height: 100vh;
 }
 
-.grid div:nth-child(2){
-    grid-column: 1 / span 3;
+.header{
+    grid-area: h;
+}
+
+.content{
+    grid-area: c;
+}
+
+.sidebar{
+    grid-area: s;
+}
+
+.footer{
+    grid-area: f;
 }

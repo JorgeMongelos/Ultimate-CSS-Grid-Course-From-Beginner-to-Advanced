@@ -632,12 +632,170 @@
   </body>
 </html>
 ``` 
+## Align Items Vertically: align-items.
+```CSS
+.grid{
+    display: grid;
+    grid-gap: 10px;
+    grid-template: 100px 100px 100px /repeat(auto-fit, minmax(100px, 1fr));
+    align-items: center; /* end, center, stretch */ 
+}
+```
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Ultimate CSS Grid Course, (c) Peter Sommerhoff</title>
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="css/main.css">
+      <!-- Remove this line for offline development: -->
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+  </head>
+  <body>
+    <h2>Ultimate CSS Grid Course</h2>
+    <p>This is the template you can use to follow along the course.</p>
+    <div>
+      <div class="grid">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+      </div>
+    </div>
+  </body>
+</html>
+``` 
+## Justifying the Container: justify-content.
+```CSS
+.grid{
+    display: grid;
+    grid-gap: 10px;
+    grid-template: 100px 100px 100px / 200px auto;
+    justify-content: start; /*stretch, end, space-around, space between, space-evenly */
+}
+```
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Ultimate CSS Grid Course, (c) Peter Sommerhoff</title>
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="css/main.css">
+      <!-- Remove this line for offline development: -->
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+  </head>
+  <body>
+    <h2>Ultimate CSS Grid Course</h2>
+    <p>This is the template you can use to follow along the course.</p>
+    <div>
+      <div class="grid">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+      </div>
+    </div>
+  </body>
+</html>
+``` 
+## Aligning the Container: align-content.
+```CSS
+.grid{
+    display: grid;
+    grid-gap: 10px;
+    grid-template: 100px 100px 100px / 200px auto;
+    align-content: start; /*stretch, end, space-around, space between, space-evenly */
+}
+```
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Ultimate CSS Grid Course, (c) Peter Sommerhoff</title>
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="css/main.css">
+      <!-- Remove this line for offline development: -->
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+  </head>
+  <body>
+    <h2>Ultimate CSS Grid Course</h2>
+    <p>This is the template you can use to follow along the course.</p>
+    <div>
+      <div class="grid">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+      </div>
+    </div>
+  </body>
+</html>
+``` 
+## Overriding Alignments: justify-self & align-self.
+```CSS
 
+```
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Ultimate CSS Grid Course, (c) Peter Sommerhoff</title>
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="css/main.css">
+      <!-- Remove this line for offline development: -->
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+  </head>
+  <body>
+    <h2>Ultimate CSS Grid Course</h2>
+    <p>This is the template you can use to follow along the course.</p>
+    <div>
+      <div class="grid">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+      </div>
+    </div>
+  </body>
+</html>
+``` 
 
 ## Placeholder
 ```CSS
 
 ```
 ```HTML
-
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Ultimate CSS Grid Course, (c) Peter Sommerhoff</title>
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="css/main.css">
+      <!-- Remove this line for offline development: -->
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+  </head>
+  <body>
+    <h2>Ultimate CSS Grid Course</h2>
+    <p>This is the template you can use to follow along the course.</p>
+    <div>
+      <div class="grid">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+      </div>
+    </div>
+  </body>
+</html>
 ``` 
+

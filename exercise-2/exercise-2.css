@@ -1,0 +1,60 @@
+#container{
+    display: grid;
+    grid-template: repeat(24, 100px) / repeat(24, auto 100px ) ;
+    grid-gap: 5px;
+    grid-template-areas: 
+    "A A A A"
+    "B B C C"
+    "D D D D"
+    "E E E F"
+    "G G G G"
+}
+
+#container div:nth-child(1){
+    grid-area: A;
+    background-color: #293238;
+    grid-column: auto / span 34;
+    grid-row: auto / span 1;
+
+}
+
+#container div:nth-child(2){
+    grid-area: B;
+    background-color:  #b3bdc5;
+    grid-column: auto / span 17;
+}
+
+#container div:nth-child(3){
+    grid-area: C;
+    background-color: #94a3ae;
+    grid-column: auto / span 17;
+}
+
+#container div:nth-child(4){
+    grid-area: D;
+    background-color: #d1d8dc;
+    grid-column: auto / span 34;
+    grid-row: auto / span 4;
+
+}
+
+#container div:nth-child(5){
+    grid-area: E;
+    background-color: #495964;
+    grid-column: auto / span 25;
+    grid-row: auto / span 1;
+}
+
+#container div:nth-child(6){
+    grid-area: F;
+    background-color: #495964;
+    grid-column: auto / span 9;
+    grid-row: auto / span 1;   
+}
+
+#container div:nth-child(7){
+    grid-area: G;
+    background-color: #293238;
+    grid-row: auto / span 1;
+    grid-column: auto / span 34;
+}

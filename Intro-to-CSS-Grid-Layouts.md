@@ -739,7 +739,157 @@
 ``` 
 ## Overriding Alignments: justify-self & align-self.
 ```CSS
+.grid{
+    display: grid;
+    grid-gap: 10px;
+    grid-template: 150px 150px / 200px 200px 200px;
+    border: 1px solid #FFF;
+    padding: 10px;
+    height: 400px;
+    justify-content: center;
+    align-content: center;
 
+}
+.grid div:nth-child(1){
+    justify-self: start; /* stretch, center */
+}
+
+.grid div:nth-child(3){
+    justify-self: end; /* stretch, center */
+    align-self: end;
+}
+
+.grid div:nth-child(5){
+    justify-self: center; /* stretch, center */
+    align-self: start;
+}
+```
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Ultimate CSS Grid Course, (c) Peter Sommerhoff</title>
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="css/main.css">
+      <!-- Remove this line for offline development: -->
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+  </head>
+  <body>
+    <h2>Ultimate CSS Grid Course</h2>
+    <p>This is the template you can use to follow along the course.</p>
+    <div>
+      <div class="grid">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+      </div>
+    </div>
+  </body>
+</html>
+``` 
+# Section #6: The Implicit Grid and Grid Flow.
+## The Implicit Grid: grid-auto-rows & grid-auto-columns.
+```CSS
+.grid{
+    display: grid;
+    grid-gap: 10px;
+    grid-template: 150px 150px / 150px 150px; /* explicit row/column sizes */
+    grid-auto-rows: 100px; /* implicit row size */
+    grid-auto-columns: 150px;/* implicit column size*/
+}
+
+.grid div:nth-child(2){
+    grid-column: 2 / span 3;
+}
+```
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Ultimate CSS Grid Course, (c) Peter Sommerhoff</title>
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="css/main.css">
+      <!-- Remove this line for offline development: -->
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+  </head>
+  <body>
+    <h2>Ultimate CSS Grid Course</h2>
+    <p>This is the template you can use to follow along the course.</p>
+    <div>
+      <div class="grid">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+      </div>
+    </div>
+  </body>
+</html>
+```
+## Flow for the Implicit Grid: grid-auto-flow.
+```CSS
+.grid{
+    display: grid;
+    grid-gap: 10px;
+    grid-template: 150px 150px / 150px 150px;
+ /* grid-auto-rows: 100px;
+    grid-auto-columns: 150px; */
+    grid-auto-flow: row dense; /* column, row */
+}
+
+.grid div:nth-child(2){
+    /* grid-column: 1 / span 3; */
+}
+```
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Ultimate CSS Grid Course, (c) Peter Sommerhoff</title>
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="css/main.css">
+      <!-- Remove this line for offline development: -->
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+  </head>
+  <body>
+    <h2>Ultimate CSS Grid Course</h2>
+    <p>This is the template you can use to follow along the course.</p>
+    <div>
+      <div class="grid">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+      </div>
+    </div>
+  </body>
+</html>
+``` 
+## Shorthand when using grid.
+```CSS
+.grid{
+    display: grid;
+    grid: 150px 150px / auto-flow 150px; 
+     /* Equivalent to:
+    grid-auto-flow: column;
+    grid-template-columns: none; (default)
+    grid-auto-columns: 150px;
+    grid-template-rows: none;
+    grid-auto-rows: 150px;
+    */
+    grid-gap: 10px; /* <-- below grid property. */
+}
+
+.grid div:nth-child(2){
+    grid-column: 1 / span 3;
+}
 ```
 ```HTML
 <!DOCTYPE html>
@@ -798,4 +948,3 @@
   </body>
 </html>
 ``` 
-

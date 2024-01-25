@@ -1,0 +1,12 @@
+.container{
+    grid: 150px 150px / auto-flow 150px;
+    list-style: none;
+
+}
+
+.container li{
+    display: inline-block; 
+    color: #FFF;
+    background-color: #607d8b;
+    padding: 20px;
+}

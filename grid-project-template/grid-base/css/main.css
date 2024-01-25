@@ -1,13 +1,15 @@
 .grid{
     display: grid;
-    grid: 150px 150px / auto-flow 150px; 
-     /* Equivalent to:
-    grid-auto-flow: column;
-    grid-template-columns: none; (default)
-    grid-auto-columns: 150px;
+    grid: auto-flow 150px / auto-flow 1fr; /* 2 x 2 explicit */
+     /* 'auto-flow value = Equivalent to:
+            grid-auto-flow: column;
+            grid-template-columns: none; (default)
+            grid-auto-columns: 150px;
+            grid-template-rows: none;
+            grid-auto-rows: 150px;
     */
-    grid-gap: 10px; /* <-- below grid porperty. */
-
+    grid-gap: 10px; /* <-- below grid property. */
+    grid-auto-flow:  row dense;
 }
 
 .grid div:nth-child(2){
